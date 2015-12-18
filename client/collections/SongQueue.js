@@ -2,24 +2,21 @@
 var SongQueue = Songs.extend({
 
   initialize: function(){
-    this.on('enqueue', function(){console.log('listening to songqueue')}, this)
-    // this.model.on
-    // this.on('play', function(song){
-    //   this.add(song);
-    //   console.log('SONG QUEUE LISTENER!')      
-    // }, this )
+    // this.on('ended', function(){console.log('working')}, this)
   },
-  // defaults:{
-  //   queue: []
-  // }, 
-  
 
   events: {
-    'enqueue': function(song){
-      this.add(song);
-      console.log('SONG QUEUE LISTENER!')      
-    }
+  
+  }, 
+
+  playFirst: function(song){
+    console.log('we invoked playFirst');
+    this.at(0).play();
+
+
+     //console.log(this.at(0));
   }
+
 
 
 

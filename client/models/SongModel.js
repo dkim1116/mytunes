@@ -6,7 +6,7 @@ var SongModel = Backbone.Model.extend({
     // Why do we need to pass along the keyword this when we trigger the 'play' event?
     //Because we instanciate song off of the SongModel. By passing in the keyword this, it binds the keyword to whichever instanciation invokes it.
     this.trigger('play', this);
-    this.trigger('enqueue', this)
+    console.log('a song instance has played');
   },
   enqueue: function(){
     // app.songQueue.defaults[queue].push(this);
@@ -17,6 +17,9 @@ var SongModel = Backbone.Model.extend({
 
     // this.inqueue = true;
   }
+  // playFirst: function(){
+  //   console.log('playFirst inside song Model')
+  // }
   // inqueue = false;
 
 });

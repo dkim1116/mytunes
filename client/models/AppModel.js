@@ -4,6 +4,7 @@ var AppModel = Backbone.Model.extend({
   initialize: function(params){
     this.set('currentSong', new SongModel());
     this.set('songQueue', new SongQueue());
+    // console.log('params:', params);
 
     /* Note that 'this' is passed as the third argument. That third argument is
     the context. The 'play' callback function will always be bound to that context we pass in.
@@ -15,7 +16,7 @@ var AppModel = Backbone.Model.extend({
 
     params.library.on('play', function(song){
       this.set('currentSong', song);
-      console.log('app is playing')
+      //console.log('app is playing')
     }, this);
     // params.lib
     params.library.on('enqueue', function(song){
@@ -23,9 +24,13 @@ var AppModel = Backbone.Model.extend({
       //When you 'set' songQueue, it is set to pretty much nothing.
       //access songQueue collection, and add song
       this.get('songQueue').add(song);
-      console.log(this.get('songQueue'))
+      //console.log(this.get('songQueue'))
     }, this);
-  }
+    // params.library.on('ended', function(song){
+      
+    //   console.log('ended from AppModel')
+    // }, this)
+  } 
 
 });
   
