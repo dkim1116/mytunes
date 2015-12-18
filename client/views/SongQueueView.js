@@ -2,11 +2,11 @@
 var SongQueueView = Backbone.View.extend({
 
   initialize: function() {
+     this.on('enqueue', function(){console.log('listening to songqueue')}, this)
+
   },
 
   render: function() {
-  initialize: function() {
-  },
   }
 
 });

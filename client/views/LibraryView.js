@@ -4,8 +4,12 @@ var LibraryView = Backbone.View.extend({
   tagName: "table",
 
   initialize: function() {
+    // this.model.on('enqueue', this.queue.push(this), this)
     this.render();
   },
+  // defaults:{
+    // queue: []
+  // }
 
   render: function(){
     // to preserve event handlers on child nodes, we must call .detach() on them before overwriting with .html()
