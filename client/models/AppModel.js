@@ -24,6 +24,9 @@ var AppModel = Backbone.Model.extend({
       //When you 'set' songQueue, it is set to pretty much nothing.
       //access songQueue collection, and add song
       this.get('songQueue').add(song);
+      // if(this.get('songQueue').length===1){
+        // this.set('currentSong', this.get('songQueue'))
+      // }
       //console.log(this.get('songQueue'))
     }, this);
     // params.library.on('ended', function(song){
