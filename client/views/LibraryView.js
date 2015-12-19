@@ -6,6 +6,7 @@ var LibraryView = Backbone.View.extend({
   initialize: function() {
     // this.model.on('enqueue', this.queue.push(this), this)
     this.render();
+    this.collection.on('change:playCount', this.render(), this);
   },
   // defaults:{
     // queue: []
@@ -16,7 +17,7 @@ var LibraryView = Backbone.View.extend({
     // see http://api.jquery.com/detach/
     this.$el.children().detach();
 
-    this.$el.html('<th>LIBRARY</th>').append(
+    this.$el.html('<th>LIBRARIO</th><th>CANTA TITULO</th><th>COUNT</th>').append(
       this.collection.map(function(song){
         return new LibraryEntryView({model: song}).render();
       })
